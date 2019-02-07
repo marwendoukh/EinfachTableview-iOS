@@ -1,0 +1,600 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		19C889D9220CB2AA00FAC85D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C889D8220CB2AA00FAC85D /* AppDelegate.swift */; };
+		19C889DB220CB2AA00FAC85D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C889DA220CB2AA00FAC85D /* ViewController.swift */; };
+		19C889DE220CB2AA00FAC85D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C889DC220CB2AA00FAC85D /* Main.storyboard */; };
+		19C889E1220CB2AB00FAC85D /* EinfachTableview.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19C889DF220CB2AA00FAC85D /* EinfachTableview.xcdatamodeld */; };
+		19C889E3220CB2CF00FAC85D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19C889E2220CB2CF00FAC85D /* Assets.xcassets */; };
+		19C889E6220CB2CF00FAC85D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C889E4220CB2CF00FAC85D /* LaunchScreen.storyboard */; };
+		19C889F1220CB2D000FAC85D /* EinfachTableviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C889F0220CB2D000FAC85D /* EinfachTableviewTests.swift */; };
+		19C889FC220CB2D000FAC85D /* EinfachTableviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C889FB220CB2D000FAC85D /* EinfachTableviewUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		19C889ED220CB2D000FAC85D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19C889CD220CB2AA00FAC85D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19C889D4220CB2AA00FAC85D;
+			remoteInfo = EinfachTableview;
+		};
+		19C889F8220CB2D000FAC85D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19C889CD220CB2AA00FAC85D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19C889D4220CB2AA00FAC85D;
+			remoteInfo = EinfachTableview;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		19C889D5220CB2AA00FAC85D /* EinfachTableview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EinfachTableview.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		19C889D8220CB2AA00FAC85D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		19C889DA220CB2AA00FAC85D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		19C889DD220CB2AA00FAC85D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		19C889E0220CB2AA00FAC85D /* EinfachTableview.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EinfachTableview.xcdatamodel; sourceTree = "<group>"; };
+		19C889E2220CB2CF00FAC85D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		19C889E5220CB2CF00FAC85D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		19C889E7220CB2CF00FAC85D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19C889EC220CB2D000FAC85D /* EinfachTableviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EinfachTableviewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		19C889F0220CB2D000FAC85D /* EinfachTableviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EinfachTableviewTests.swift; sourceTree = "<group>"; };
+		19C889F2220CB2D000FAC85D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19C889F7220CB2D000FAC85D /* EinfachTableviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EinfachTableviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		19C889FB220CB2D000FAC85D /* EinfachTableviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EinfachTableviewUITests.swift; sourceTree = "<group>"; };
+		19C889FD220CB2D000FAC85D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		19C889D2220CB2AA00FAC85D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19C889E9220CB2D000FAC85D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19C889F4220CB2D000FAC85D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C889CC220CB2A900FAC85D = {
+			isa = PBXGroup;
+			children = (
+				19C889D7220CB2AA00FAC85D /* EinfachTableview */,
+				19C889EF220CB2D000FAC85D /* EinfachTableviewTests */,
+				19C889FA220CB2D000FAC85D /* EinfachTableviewUITests */,
+				19C889D6220CB2AA00FAC85D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		19C889D6220CB2AA00FAC85D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				19C889D5220CB2AA00FAC85D /* EinfachTableview.app */,
+				19C889EC220CB2D000FAC85D /* EinfachTableviewTests.xctest */,
+				19C889F7220CB2D000FAC85D /* EinfachTableviewUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		19C889D7220CB2AA00FAC85D /* EinfachTableview */ = {
+			isa = PBXGroup;
+			children = (
+				19C889D8220CB2AA00FAC85D /* AppDelegate.swift */,
+				19C889DA220CB2AA00FAC85D /* ViewController.swift */,
+				19C889DC220CB2AA00FAC85D /* Main.storyboard */,
+				19C889E2220CB2CF00FAC85D /* Assets.xcassets */,
+				19C889E4220CB2CF00FAC85D /* LaunchScreen.storyboard */,
+				19C889E7220CB2CF00FAC85D /* Info.plist */,
+				19C889DF220CB2AA00FAC85D /* EinfachTableview.xcdatamodeld */,
+			);
+			path = EinfachTableview;
+			sourceTree = "<group>";
+		};
+		19C889EF220CB2D000FAC85D /* EinfachTableviewTests */ = {
+			isa = PBXGroup;
+			children = (
+				19C889F0220CB2D000FAC85D /* EinfachTableviewTests.swift */,
+				19C889F2220CB2D000FAC85D /* Info.plist */,
+			);
+			path = EinfachTableviewTests;
+			sourceTree = "<group>";
+		};
+		19C889FA220CB2D000FAC85D /* EinfachTableviewUITests */ = {
+			isa = PBXGroup;
+			children = (
+				19C889FB220CB2D000FAC85D /* EinfachTableviewUITests.swift */,
+				19C889FD220CB2D000FAC85D /* Info.plist */,
+			);
+			path = EinfachTableviewUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		19C889D4220CB2AA00FAC85D /* EinfachTableview */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19C88A00220CB2D000FAC85D /* Build configuration list for PBXNativeTarget "EinfachTableview" */;
+			buildPhases = (
+				19C889D1220CB2AA00FAC85D /* Sources */,
+				19C889D2220CB2AA00FAC85D /* Frameworks */,
+				19C889D3220CB2AA00FAC85D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EinfachTableview;
+			productName = EinfachTableview;
+			productReference = 19C889D5220CB2AA00FAC85D /* EinfachTableview.app */;
+			productType = "com.apple.product-type.application";
+		};
+		19C889EB220CB2D000FAC85D /* EinfachTableviewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19C88A03220CB2D000FAC85D /* Build configuration list for PBXNativeTarget "EinfachTableviewTests" */;
+			buildPhases = (
+				19C889E8220CB2D000FAC85D /* Sources */,
+				19C889E9220CB2D000FAC85D /* Frameworks */,
+				19C889EA220CB2D000FAC85D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				19C889EE220CB2D000FAC85D /* PBXTargetDependency */,
+			);
+			name = EinfachTableviewTests;
+			productName = EinfachTableviewTests;
+			productReference = 19C889EC220CB2D000FAC85D /* EinfachTableviewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		19C889F6220CB2D000FAC85D /* EinfachTableviewUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19C88A06220CB2D000FAC85D /* Build configuration list for PBXNativeTarget "EinfachTableviewUITests" */;
+			buildPhases = (
+				19C889F3220CB2D000FAC85D /* Sources */,
+				19C889F4220CB2D000FAC85D /* Frameworks */,
+				19C889F5220CB2D000FAC85D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				19C889F9220CB2D000FAC85D /* PBXTargetDependency */,
+			);
+			name = EinfachTableviewUITests;
+			productName = EinfachTableviewUITests;
+			productReference = 19C889F7220CB2D000FAC85D /* EinfachTableviewUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		19C889CD220CB2AA00FAC85D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Marwen Doukh";
+				TargetAttributes = {
+					19C889D4220CB2AA00FAC85D = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					19C889EB220CB2D000FAC85D = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 19C889D4220CB2AA00FAC85D;
+					};
+					19C889F6220CB2D000FAC85D = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 19C889D4220CB2AA00FAC85D;
+					};
+				};
+			};
+			buildConfigurationList = 19C889D0220CB2AA00FAC85D /* Build configuration list for PBXProject "EinfachTableview" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 19C889CC220CB2A900FAC85D;
+			productRefGroup = 19C889D6220CB2AA00FAC85D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				19C889D4220CB2AA00FAC85D /* EinfachTableview */,
+				19C889EB220CB2D000FAC85D /* EinfachTableviewTests */,
+				19C889F6220CB2D000FAC85D /* EinfachTableviewUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		19C889D3220CB2AA00FAC85D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19C889E6220CB2CF00FAC85D /* LaunchScreen.storyboard in Resources */,
+				19C889E3220CB2CF00FAC85D /* Assets.xcassets in Resources */,
+				19C889DE220CB2AA00FAC85D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19C889EA220CB2D000FAC85D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19C889F5220CB2D000FAC85D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		19C889D1220CB2AA00FAC85D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19C889DB220CB2AA00FAC85D /* ViewController.swift in Sources */,
+				19C889D9220CB2AA00FAC85D /* AppDelegate.swift in Sources */,
+				19C889E1220CB2AB00FAC85D /* EinfachTableview.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19C889E8220CB2D000FAC85D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19C889F1220CB2D000FAC85D /* EinfachTableviewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19C889F3220CB2D000FAC85D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19C889FC220CB2D000FAC85D /* EinfachTableviewUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		19C889EE220CB2D000FAC85D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 19C889D4220CB2AA00FAC85D /* EinfachTableview */;
+			targetProxy = 19C889ED220CB2D000FAC85D /* PBXContainerItemProxy */;
+		};
+		19C889F9220CB2D000FAC85D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 19C889D4220CB2AA00FAC85D /* EinfachTableview */;
+			targetProxy = 19C889F8220CB2D000FAC85D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		19C889DC220CB2AA00FAC85D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19C889DD220CB2AA00FAC85D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		19C889E4220CB2CF00FAC85D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19C889E5220CB2CF00FAC85D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		19C889FE220CB2D000FAC85D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		19C889FF220CB2D000FAC85D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		19C88A01220CB2D000FAC85D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EinfachTableview/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Marwen-Doukh.EinfachTableview";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		19C88A02220CB2D000FAC85D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EinfachTableview/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Marwen-Doukh.EinfachTableview";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		19C88A04220CB2D000FAC85D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EinfachTableviewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Marwen-Doukh.EinfachTableviewTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EinfachTableview.app/EinfachTableview";
+			};
+			name = Debug;
+		};
+		19C88A05220CB2D000FAC85D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EinfachTableviewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Marwen-Doukh.EinfachTableviewTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EinfachTableview.app/EinfachTableview";
+			};
+			name = Release;
+		};
+		19C88A07220CB2D000FAC85D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EinfachTableviewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Marwen-Doukh.EinfachTableviewUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EinfachTableview;
+			};
+			name = Debug;
+		};
+		19C88A08220CB2D000FAC85D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EinfachTableviewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Marwen-Doukh.EinfachTableviewUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EinfachTableview;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		19C889D0220CB2AA00FAC85D /* Build configuration list for PBXProject "EinfachTableview" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19C889FE220CB2D000FAC85D /* Debug */,
+				19C889FF220CB2D000FAC85D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19C88A00220CB2D000FAC85D /* Build configuration list for PBXNativeTarget "EinfachTableview" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19C88A01220CB2D000FAC85D /* Debug */,
+				19C88A02220CB2D000FAC85D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19C88A03220CB2D000FAC85D /* Build configuration list for PBXNativeTarget "EinfachTableviewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19C88A04220CB2D000FAC85D /* Debug */,
+				19C88A05220CB2D000FAC85D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19C88A06220CB2D000FAC85D /* Build configuration list for PBXNativeTarget "EinfachTableviewUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19C88A07220CB2D000FAC85D /* Debug */,
+				19C88A08220CB2D000FAC85D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		19C889DF220CB2AA00FAC85D /* EinfachTableview.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				19C889E0220CB2AA00FAC85D /* EinfachTableview.xcdatamodel */,
+			);
+			currentVersion = 19C889E0220CB2AA00FAC85D /* EinfachTableview.xcdatamodel */;
+			path = EinfachTableview.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 19C889CD220CB2AA00FAC85D /* Project object */;
+}
