@@ -15,15 +15,12 @@ protocol EinfachTVDelegate: class {
     func terminatedWithError(error: EinfachTableviewError)
 }
 
-
-
-class EinfachTableview<T: Codable>: NSObject, UITableViewDelegate, UITableViewDataSource  {
+class EinfachTableview<T: Codable>: NSObject, UITableViewDelegate, UITableViewDataSource {
     
     // list of items (from WS)
     var items: [Codable] = []
     // delegate
-    var einfachTVDelegate: EinfachTVDelegate?
-   
+    weak var einfachTVDelegate: EinfachTVDelegate?
     
     func loadData(url: String) {
         
@@ -33,18 +30,26 @@ class EinfachTableview<T: Codable>: NSObject, UITableViewDelegate, UITableViewDa
             return
         }
         
-        let ws = APIClient<T>()
+        // api client
+        let apiClient = APIClient<T>()
+        
         if let url = URL(string: url) {
             let request = URLRequest(url: url)
-            ws.execute(request: request) { (itemsFromWs) in
-                // check if WS returns an array
+            apiClient.execute(request: request) { (itemsFromWs, error) in
                 
+                // check for errors
+                guard error == nil else {
+                    self.einfachTVDelegate?.terminatedWithError(error: error ?? .errorWsResponse)
+                    return
+                }
+                
+                // check if WS returns an array
                 if let items = itemsFromWs as? [Codable] {
                     self.items = items
                     DispatchQueue.main.async {
-                      self.einfachTVDelegate?.doneCallingWs()
+                        self.einfachTVDelegate?.doneCallingWs()
                     }
-                   
+                    
                 }
                 
             }
@@ -53,14 +58,12 @@ class EinfachTableview<T: Codable>: NSObject, UITableViewDelegate, UITableViewDa
         
     }
     
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       let cell = einfachTVDelegate?.cellForRowAt(tableView, cellForRowAt: indexPath, model: items[indexPath.row])
+        let cell = einfachTVDelegate?.cellForRowAt(tableView, cellForRowAt: indexPath, model: items[indexPath.row])
         return cell ?? UITableViewCell()
     }
 }

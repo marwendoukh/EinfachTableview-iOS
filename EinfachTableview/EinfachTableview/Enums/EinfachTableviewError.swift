@@ -8,4 +8,7 @@
 
 enum EinfachTableviewError {
     case noInternet
+    case errorWsResponse
+    case errorDataDecodingWsResponse
+    case noDataWsResponse
 }
