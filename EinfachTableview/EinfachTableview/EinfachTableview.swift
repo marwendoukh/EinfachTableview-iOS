@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import Reachability
 
 protocol EinfachTVDelegate: class {
     func cellForRowAt(_ tableView: UITableView, cellForRowAt indexPath: IndexPath, model: Codable) -> UITableViewCell
     func doneCallingWs()
+    func terminatedWithError(error: EinfachTableviewError)
 }
+
 
 
 class EinfachTableview<T: Codable>: NSObject, UITableViewDelegate, UITableViewDataSource  {
@@ -23,6 +26,12 @@ class EinfachTableview<T: Codable>: NSObject, UITableViewDelegate, UITableViewDa
    
     
     func loadData(url: String) {
+        
+        // check for Internet
+        guard Reachability()?.connection.hashValue != 0 else {
+            einfachTVDelegate?.terminatedWithError(error: .noInternet)
+            return
+        }
         
         let ws = APIClient<T>()
         if let url = URL(string: url) {
@@ -48,10 +57,6 @@ class EinfachTableview<T: Codable>: NSObject, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

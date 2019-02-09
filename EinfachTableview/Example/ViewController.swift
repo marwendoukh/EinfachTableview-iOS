@@ -39,5 +39,9 @@ class ViewController: UIViewController, EinfachTVDelegate {
         return cell ?? UITableViewCell()
     }
     
+    func terminatedWithError(error: EinfachTableviewError) {
+        debugPrint(error)
+    }
+    
 }
 
