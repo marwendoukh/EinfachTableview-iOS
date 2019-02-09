@@ -22,7 +22,7 @@ class EinfachTableview<T: Codable>: NSObject, UITableViewDelegate, UITableViewDa
     // delegate
     weak var einfachTVDelegate: EinfachTVDelegate?
     
-    func loadData(url: String) {
+    func loadData(url: String, header: [String: String]? = nil) {
         
         // check for Internet
         guard Reachability()?.connection.hashValue != 0 else {
@@ -34,7 +34,11 @@ class EinfachTableview<T: Codable>: NSObject, UITableViewDelegate, UITableViewDa
         let apiClient = APIClient<T>()
         
         if let url = URL(string: url) {
-            let request = URLRequest(url: url)
+            var request = URLRequest(url: url)
+            // request header
+            request.allHTTPHeaderFields = header
+            
+            // execute WS
             apiClient.execute(request: request) { (itemsFromWs, error) in
                 
                 // check for errors
