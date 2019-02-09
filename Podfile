@@ -8,6 +8,9 @@ target 'EinfachTableview' do
     # Pods for EinfachTableview
     # Reachability
     pod 'ReachabilitySwift'
+    # Swiflint
+    pod 'SwiftLint'
+    
     target 'EinfachTableviewTests' do
         inherit! :search_paths
         # Pods for testing

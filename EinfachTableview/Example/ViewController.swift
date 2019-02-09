@@ -25,7 +25,6 @@ class ViewController: UIViewController, EinfachTVDelegate {
         einfachTV.loadData(url: "https://www.json-generator.com/api/json/get/cfwqDioRvm?indent=2")
     }
     
-    
     func doneCallingWs() {
         myTableview.reloadData()
     }
@@ -44,4 +43,3 @@ class ViewController: UIViewController, EinfachTVDelegate {
     }
     
 }
-

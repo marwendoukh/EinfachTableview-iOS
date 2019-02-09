@@ -6,7 +6,10 @@
 //  Copyright © 2019 Marwen Doukh. All rights reserved.
 //
 
+// swiftlint:disable identifier_name
+
 class Movie: Codable {
+    
     var rating: Double = 0
     var title: String = ""
     var mediumCoverImage: String = ""
@@ -53,7 +56,6 @@ class Movie: Codable {
         year = try container.decode(Int.self, forKey: .year)
         id = try container.decode(Int.self, forKey: .id)
         descriptionFull = try container.decode(String.self, forKey: .descriptionFull)
-        
         
     }
 }

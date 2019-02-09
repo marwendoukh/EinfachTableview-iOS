@@ -10,29 +10,29 @@ import UIKit
 
 class APIClient<T: Codable> {
     
-    
-    func execute(request: URLRequest, completion: @escaping (T?) -> Void) {
+    func execute(request: URLRequest, completion: @escaping (T?, EinfachTableviewError?) -> Void) {
         
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
             
             guard error == nil else {
                 debugPrint("error: \(error.debugDescription)")
-                completion(nil)
+                completion(nil, .errorWsResponse)
                 return
             }
             
             guard let data = data else {
                 debugPrint("no data")
-                completion(nil)
+                completion(nil, .noDataWsResponse)
                 return
             }
             
             guard let object = try? JSONDecoder().decode(T.self, from: data) else {
                 debugPrint("Could not decode data")
+                completion(nil, .errorDataDecodingWsResponse)
                 return
             }
             // completion object
-            completion(object)
+            completion(object, nil)
             }.resume()
     }
     
