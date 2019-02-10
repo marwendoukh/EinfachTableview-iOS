@@ -10,6 +10,8 @@ target 'EinfachTableview' do
     pod 'ReachabilitySwift'
     # Swiflint
     pod 'SwiftLint'
+    # Realm
+    pod 'RealmSwift'
     
     target 'EinfachTableviewTests' do
         inherit! :search_paths

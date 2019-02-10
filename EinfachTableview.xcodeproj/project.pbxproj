@@ -13,6 +13,8 @@
 		195A2233220ED33C00F01BE0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195A2232220ED33C00F01BE0 /* Movie.swift */; };
 		195A2236220ED37100F01BE0 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195A2235220ED37100F01BE0 /* APIClient.swift */; };
 		195A2238220ED3C300F01BE0 /* EinfachTableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195A2237220ED3C300F01BE0 /* EinfachTableview.swift */; };
+		1977233D22103FD000B0C277 /* EinfachTableviewStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1977233C22103FCF00B0C277 /* EinfachTableviewStorage.swift */; };
+		19772344221059E900B0C277 /* RealmDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19772343221059E800B0C277 /* RealmDataStorage.swift */; };
 		19C889D9220CB2AA00FAC85D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C889D8220CB2AA00FAC85D /* AppDelegate.swift */; };
 		19C889DB220CB2AA00FAC85D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C889DA220CB2AA00FAC85D /* ViewController.swift */; };
 		19C889DE220CB2AA00FAC85D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C889DC220CB2AA00FAC85D /* Main.storyboard */; };
@@ -53,6 +55,8 @@
 		195A2232220ED33C00F01BE0 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		195A2235220ED37100F01BE0 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		195A2237220ED3C300F01BE0 /* EinfachTableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EinfachTableview.swift; sourceTree = "<group>"; };
+		1977233C22103FCF00B0C277 /* EinfachTableviewStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EinfachTableviewStorage.swift; sourceTree = "<group>"; };
+		19772343221059E800B0C277 /* RealmDataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDataStorage.swift; sourceTree = "<group>"; };
 		19C889D5220CB2AA00FAC85D /* EinfachTableview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EinfachTableview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C889D8220CB2AA00FAC85D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19C889DA220CB2AA00FAC85D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				1910854D220F4AC30039C529 /* EinfachTableviewError.swift */,
+				1977233C22103FCF00B0C277 /* EinfachTableviewStorage.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 			children = (
 				195A2234220ED35B00F01BE0 /* Services */,
 				1910854C220F4A990039C529 /* Enums */,
+				1977233E2210416200B0C277 /* Repositories */,
 				195A2237220ED3C300F01BE0 /* EinfachTableview.swift */,
 			);
 			path = EinfachTableview;
@@ -137,6 +143,14 @@
 				19C889DA220CB2AA00FAC85D /* ViewController.swift */,
 			);
 			path = Example;
+			sourceTree = "<group>";
+		};
+		1977233E2210416200B0C277 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				19772343221059E800B0C277 /* RealmDataStorage.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		19C889CC220CB2A900FAC85D = {
@@ -408,10 +422,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-EinfachTableview/Pods-EinfachTableview-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -444,11 +462,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				195A2231220ED2AD00F01BE0 /* MovieTableViewCell.swift in Sources */,
+				1977233D22103FD000B0C277 /* EinfachTableviewStorage.swift in Sources */,
 				1910854E220F4AC30039C529 /* EinfachTableviewError.swift in Sources */,
 				195A2236220ED37100F01BE0 /* APIClient.swift in Sources */,
 				195A2238220ED3C300F01BE0 /* EinfachTableview.swift in Sources */,
 				19C889DB220CB2AA00FAC85D /* ViewController.swift in Sources */,
 				195A2233220ED33C00F01BE0 /* Movie.swift in Sources */,
+				19772344221059E900B0C277 /* RealmDataStorage.swift in Sources */,
 				19C889D9220CB2AA00FAC85D /* AppDelegate.swift in Sources */,
 				19C889E1220CB2AB00FAC85D /* EinfachTableview.xcdatamodeld in Sources */,
 			);

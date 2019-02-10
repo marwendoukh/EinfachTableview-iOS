@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController, EinfachTVDelegate {
     
@@ -22,7 +23,10 @@ class ViewController: UIViewController, EinfachTVDelegate {
         myTableview.dataSource = einfachTV
         einfachTV.einfachTVDelegate = self
         // load data from WS
+        einfachTV.localStorageMode = .realm
+        
         einfachTV.loadData(url: "https://www.json-generator.com/api/json/get/cfwqDioRvm?indent=2")
+        
     }
     
     func doneCallingWs() {
@@ -38,8 +42,8 @@ class ViewController: UIViewController, EinfachTVDelegate {
         return cell ?? UITableViewCell()
     }
     
-    func terminatedWithError(error: EinfachTableviewError) {
-        debugPrint(error)
+    func terminatedWithError(error: EinfachTableviewError, description: String) {
+        debugPrint(description)
     }
     
 }

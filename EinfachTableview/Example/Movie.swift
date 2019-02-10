@@ -7,16 +7,17 @@
 //
 
 // swiftlint:disable identifier_name
+import RealmSwift
 
-class Movie: Codable {
+class Movie: Object, Codable {
     
-    var rating: Double = 0
-    var title: String = ""
-    var mediumCoverImage: String = ""
-    var year: Int = 0
-    var smallCoverImage: String = ""
-    var id: Int = 0
-    var descriptionFull: String = ""
+    @objc dynamic var rating: Double = 0
+    @objc dynamic var title: String = ""
+    @objc dynamic var mediumCoverImage: String = ""
+    @objc dynamic var year: Int = 0
+    @objc dynamic var smallCoverImage: String = ""
+    @objc dynamic var id: Int = 0
+    @objc dynamic var descriptionFull: String = ""
     
     private enum CodingKeys: String, CodingKey {
         case rating = "rating"

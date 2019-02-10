@@ -6,4 +6,7 @@
 //  Copyright © 2019 Marwen Doukh. All rights reserved.
 //
 
-import Foundation
+enum EinfachTableviewStorage {
+    case none
+    case realm
+}

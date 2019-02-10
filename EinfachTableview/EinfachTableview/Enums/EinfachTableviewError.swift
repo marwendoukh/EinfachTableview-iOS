@@ -7,8 +7,9 @@
 //
 
 enum EinfachTableviewError {
-    case noInternet
-    case errorWsResponse
-    case errorDataDecodingWsResponse
-    case noDataWsResponse
+    case noInternet  // no internet connection
+    case errorWsResponse  // WS response error
+    case errorDataDecodingWsResponse  // could not decode WS data
+    case noDataWsResponse  // WS returns empty data
+    case realmSavingFailed  // Error while saving data in Realm
 }

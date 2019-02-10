@@ -6,4 +6,15 @@
 //  Copyright © 2019 Marwen Doukh. All rights reserved.
 //
 
-import Foundation
+import RealmSwift
+
+// swiftlint:disable force_try
+struct RealmDataStorage<T: Codable> {
+    
+    func saveDataInRealm(items: [Object]) {
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(items)
+        }
+    }
+}
