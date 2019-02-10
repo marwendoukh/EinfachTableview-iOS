@@ -9,11 +9,11 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, EinfachTVDelegate {
+class ViewController: UIViewController, EinfachTableviewDelegate {
     
     @IBOutlet weak var myTableview: UITableView!
     // einfach tableview
-    let einfachTV = EinfachTableview<[Movie]>()
+    let einfachTV = EinfachTableview<Movies>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class ViewController: UIViewController, EinfachTVDelegate {
         // load data from WS
         einfachTV.localStorageMode = .realm
         
-        einfachTV.loadData(url: "https://www.json-generator.com/api/json/get/cfwqDioRvm?indent=2")
+        einfachTV.loadData(url: "https://www.json-generator.com/api/json/get/ceDdNwgzFK?indent=2")
         
     }
     
@@ -42,8 +42,11 @@ class ViewController: UIViewController, EinfachTVDelegate {
         return cell ?? UITableViewCell()
     }
     
-    func terminatedWithError(error: EinfachTableviewError, description: String) {
-        debugPrint(description)
+    func manuallyDecode(object: Codable) -> [Codable] {
+        if let movies = object as? Movies {
+            return movies.movies
+        }
+        return []
     }
     
 }

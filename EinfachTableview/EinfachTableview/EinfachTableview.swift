@@ -10,12 +10,6 @@ import UIKit
 import Reachability
 import RealmSwift
 
-protocol EinfachTVDelegate: class {
-    func cellForRowAt(_ tableView: UITableView, cellForRowAt indexPath: IndexPath, model: Codable) -> UITableViewCell
-    func doneCallingWs()
-    func terminatedWithError(error: EinfachTableviewError, description: String)
-}
-
 class EinfachTableview<T: Codable>: NSObject, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: Vars
@@ -23,7 +17,7 @@ class EinfachTableview<T: Codable>: NSObject, UITableViewDelegate, UITableViewDa
     // list of items (from WS)
     var items: [Codable] = []
     // delegate
-    weak var einfachTVDelegate: EinfachTVDelegate?
+    weak var einfachTVDelegate: EinfachTableviewDelegate?
     
     // local storage mode
     var localStorageMode: EinfachTableviewStorage = .none
@@ -51,7 +45,7 @@ class EinfachTableview<T: Codable>: NSObject, UITableViewDelegate, UITableViewDa
                 
                 // check for errors
                 guard error == nil else {
-                    self.einfachTVDelegate?.terminatedWithError(error: .errorWsResponse,
+                    self.einfachTVDelegate?.terminatedWithError(error: error ?? .errorWsResponse,
                                                                 description: error.debugDescription)
                     return
                 }
@@ -60,15 +54,18 @@ class EinfachTableview<T: Codable>: NSObject, UITableViewDelegate, UITableViewDa
                 if let items = itemsFromWs as? [Codable] {
                     self.items = items
                     
-                    DispatchQueue.main.async {
-                        
-                        // check if offline mode is active
-                        if self.localStorageMode != .none {
-                            self.saveDataLocally()
-                        }
-                        self.einfachTVDelegate?.doneCallingWs()
-                    }
+                    // ask the viewController to manually decode the Model returned from the WS
+                } else if let decodedManuallyObject = self.einfachTVDelegate?.manuallyDecode(object: itemsFromWs) {
+                    self.items = decodedManuallyObject
+                }
+                
+                DispatchQueue.main.async {
                     
+                    // check if offline mode is active
+                    if self.localStorageMode != .none {
+                        self.saveDataLocally()
+                    }
+                    self.einfachTVDelegate?.doneCallingWs()
                 }
                 
             }

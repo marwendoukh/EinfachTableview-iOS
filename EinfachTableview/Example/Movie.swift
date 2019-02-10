@@ -9,6 +9,9 @@
 // swiftlint:disable identifier_name
 import RealmSwift
 
+class Movies: Codable {
+    var movies: [Movie] = []
+}
 class Movie: Object, Codable {
     
     @objc dynamic var rating: Double = 0
