@@ -20,7 +20,7 @@ class EinfachTableview<T: Codable>: NSObject, UITableViewDelegate, UITableViewDa
     weak var einfachTVDelegate: EinfachTableviewDelegate?
     
     // local storage mode
-    var localStorageMode: EinfachTableviewStorage = .none
+    var localStorageMode: EinfachTableviewStorageMode = .none
     
     // MARK: Public Func
     

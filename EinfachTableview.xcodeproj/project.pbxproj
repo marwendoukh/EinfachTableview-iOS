@@ -13,7 +13,7 @@
 		195A2233220ED33C00F01BE0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195A2232220ED33C00F01BE0 /* Movie.swift */; };
 		195A2236220ED37100F01BE0 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195A2235220ED37100F01BE0 /* APIClient.swift */; };
 		195A2238220ED3C300F01BE0 /* EinfachTableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195A2237220ED3C300F01BE0 /* EinfachTableview.swift */; };
-		1977233D22103FD000B0C277 /* EinfachTableviewStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1977233C22103FCF00B0C277 /* EinfachTableviewStorage.swift */; };
+		1977233D22103FD000B0C277 /* EinfachTableviewStorageMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1977233C22103FCF00B0C277 /* EinfachTableviewStorageMode.swift */; };
 		19772344221059E900B0C277 /* RealmDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19772343221059E800B0C277 /* RealmDataStorage.swift */; };
 		197723472210803900B0C277 /* EinfachTableviewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197723462210803800B0C277 /* EinfachTableviewDelegate.swift */; };
 		19C889D9220CB2AA00FAC85D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C889D8220CB2AA00FAC85D /* AppDelegate.swift */; };
@@ -56,7 +56,7 @@
 		195A2232220ED33C00F01BE0 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		195A2235220ED37100F01BE0 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		195A2237220ED3C300F01BE0 /* EinfachTableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EinfachTableview.swift; sourceTree = "<group>"; };
-		1977233C22103FCF00B0C277 /* EinfachTableviewStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EinfachTableviewStorage.swift; sourceTree = "<group>"; };
+		1977233C22103FCF00B0C277 /* EinfachTableviewStorageMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EinfachTableviewStorageMode.swift; sourceTree = "<group>"; };
 		19772343221059E800B0C277 /* RealmDataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDataStorage.swift; sourceTree = "<group>"; };
 		197723462210803800B0C277 /* EinfachTableviewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EinfachTableviewDelegate.swift; sourceTree = "<group>"; };
 		19C889D5220CB2AA00FAC85D /* EinfachTableview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EinfachTableview.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,7 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				1910854D220F4AC30039C529 /* EinfachTableviewError.swift */,
-				1977233C22103FCF00B0C277 /* EinfachTableviewStorage.swift */,
+				1977233C22103FCF00B0C277 /* EinfachTableviewStorageMode.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -473,7 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				195A2231220ED2AD00F01BE0 /* MovieTableViewCell.swift in Sources */,
-				1977233D22103FD000B0C277 /* EinfachTableviewStorage.swift in Sources */,
+				1977233D22103FD000B0C277 /* EinfachTableviewStorageMode.swift in Sources */,
 				197723472210803900B0C277 /* EinfachTableviewDelegate.swift in Sources */,
 				1910854E220F4AC30039C529 /* EinfachTableviewError.swift in Sources */,
 				195A2236220ED37100F01BE0 /* APIClient.swift in Sources */,
