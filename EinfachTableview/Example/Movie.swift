@@ -22,6 +22,10 @@ class Movie: Object, Codable {
     @objc dynamic var id: Int = 0
     @objc dynamic var descriptionFull: String = ""
     
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
     private enum CodingKeys: String, CodingKey {
         case rating = "rating"
         case title = "title"

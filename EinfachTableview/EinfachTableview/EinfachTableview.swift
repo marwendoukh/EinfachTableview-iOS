@@ -22,6 +22,12 @@ class EinfachTableview<T: Codable, RO: Object>: NSObject, UITableViewDelegate, U
     // local storage mode
     var localStorageMode: EinfachTableviewStorageMode = .none
     
+    // Realm DB version
+    var realmDbVersion: UInt64 = 1
+    
+    // Update old saved Realm objects
+    var updateRealmObjects: Bool = true
+    
     // MARK: Public Func
     
     func loadData(url: String, header: [String: String]? = nil) {
@@ -102,7 +108,8 @@ class EinfachTableview<T: Codable, RO: Object>: NSObject, UITableViewDelegate, U
         switch localStorageMode {
         case .realm:
             if let items = items as? [Object] {
-                let realmStorage = RealmDataStorage<RO>()
+                let realmStorage = RealmDataStorage<RO>(updateRealmObject: updateRealmObjects,
+                                                        realmSchemaVersion: realmDbVersion)
                 realmStorage.save(items: items)
             } else {
                 einfachTVDelegate?.terminatedWithError(error: .realmSavingFailed,
@@ -118,7 +125,8 @@ class EinfachTableview<T: Codable, RO: Object>: NSObject, UITableViewDelegate, U
     func loadDataFromLocalStorage() {
         switch localStorageMode {
         case .realm:
-            let realmStorage = RealmDataStorage<RO>()
+            let realmStorage = RealmDataStorage<RO>(updateRealmObject: updateRealmObjects,
+                                                    realmSchemaVersion: realmDbVersion)
             let array = realmStorage.loadData()
             self.items = array
         case .none:

@@ -24,6 +24,7 @@ class ViewController: UIViewController, EinfachTableviewDelegate {
         einfachTV.einfachTVDelegate = self
         // load data from WS
         einfachTV.localStorageMode = .realm
+        einfachTV.realmDbVersion = 3
         
         einfachTV.loadData(url: "https://www.json-generator.com/api/json/get/ceDdNwgzFK?indent=2")
         

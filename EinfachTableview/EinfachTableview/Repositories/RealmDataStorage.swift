@@ -11,10 +11,32 @@ import RealmSwift
 // swiftlint:disable force_try
 struct RealmDataStorage<T: Object> {
     
+    var updateRealmObject: Bool = true
+    var realmSchemaVersion: UInt64 = 1
+    
+    init(updateRealmObject: Bool, realmSchemaVersion: UInt64) {
+        self.updateRealmObject = updateRealmObject
+        self.realmSchemaVersion = realmSchemaVersion
+        self.performRealmMigration()
+    }
+    
+    // Realm migration
+    func performRealmMigration() {
+        let config = Realm.Configuration(
+            schemaVersion: realmSchemaVersion,
+            migrationBlock: { _, oldSchemaVersion in
+                if oldSchemaVersion < 1 {}
+        })
+        // Tell Realm to use this new configuration object for the default Realm
+        Realm.Configuration.defaultConfiguration = config
+        // perform the migration
+        _ = try! Realm()
+    }
+    
     func save(items: [Object]) {
         let realm = try! Realm()
         try! realm.write {
-            realm.add(items, update: true)
+            realm.add(items, update: updateRealmObject)
         }
     }
     
