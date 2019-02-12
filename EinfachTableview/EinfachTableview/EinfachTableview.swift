@@ -10,11 +10,11 @@ import UIKit
 import Reachability
 import RealmSwift
 
-class EinfachTableview<T: Codable>: NSObject, UITableViewDelegate, UITableViewDataSource {
+class EinfachTableview<T: Codable, RO: Object>: NSObject, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: Vars
     
-    // list of items (from WS)
+    // list of items (from WS or local storage)
     var items: [Codable] = []
     // delegate
     weak var einfachTVDelegate: EinfachTableviewDelegate?
@@ -27,51 +27,61 @@ class EinfachTableview<T: Codable>: NSObject, UITableViewDelegate, UITableViewDa
     func loadData(url: String, header: [String: String]? = nil) {
         
         // check for Internet
-        guard Reachability()?.connection.hashValue != 0 else {
-            einfachTVDelegate?.terminatedWithError(error: .noInternet, description: "No Internet Connection")
-            return
-        }
-        
-        // api client
-        let apiClient = APIClient<T>()
-        
-        if let url = URL(string: url) {
-            var request = URLRequest(url: url)
-            // request header
-            request.allHTTPHeaderFields = header
-            
-            // execute WS
-            apiClient.execute(request: request) { (itemsFromWs, error) in
+        if Reachability()?.connection.hashValue == 0 {
+            if localStorageMode == .none {
+                // online mode only --> return error
+                einfachTVDelegate?.terminatedWithError(error: .noInternet, description: "No Internet Connection")
+                return
                 
-                // check for errors
-                guard error == nil else {
-                    self.einfachTVDelegate?.terminatedWithError(error: error ?? .errorWsResponse,
-                                                                description: error.debugDescription)
-                    return
-                }
-                
-                // check if WS returns an array
-                if let items = itemsFromWs as? [Codable] {
-                    self.items = items
-                    
-                    // ask the viewController to manually decode the Model returned from the WS
-                } else if let decodedManuallyObject = self.einfachTVDelegate?.manuallyDecode(object: itemsFromWs) {
-                    self.items = decodedManuallyObject
-                }
-                
-                DispatchQueue.main.async {
-                    
-                    // check if offline mode is active
-                    if self.localStorageMode != .none {
-                        self.saveDataLocally()
-                    }
-                    self.einfachTVDelegate?.doneCallingWs()
-                }
+            } else {
+                // offline mode
+                loadDataFromLocalStorage()
                 
             }
             
+        } else {
+            // Internet is availabe
+            
+            // api client
+            let apiClient = APIClient<T>()
+            
+            if let url = URL(string: url) {
+                var request = URLRequest(url: url)
+                // request header
+                request.allHTTPHeaderFields = header
+                
+                // execute WS
+                apiClient.execute(request: request) { (itemsFromWs, error) in
+                    
+                    // check for errors
+                    guard error == nil else {
+                        self.einfachTVDelegate?.terminatedWithError(error: error ?? .errorWsResponse,
+                                                                    description: error.debugDescription)
+                        return
+                    }
+                    
+                    // check if WS returns an array
+                    if let items = itemsFromWs as? [Codable] {
+                        self.items = items
+                        
+                        // ask the viewController to manually decode the Model returned from the WS
+                    } else if let decodedManuallyObject = self.einfachTVDelegate?.manuallyDecode(object: itemsFromWs) {
+                        self.items = decodedManuallyObject
+                    }
+                    
+                    DispatchQueue.main.async {
+                        
+                        // check if offline mode is active
+                        if self.localStorageMode != .none {
+                            self.saveDataLocally()
+                        }
+                        self.einfachTVDelegate?.doneCallingWs()
+                    }
+                    
+                }
+                
+            }
         }
-        
     }
     
     // MARK: Tableview Delegate
@@ -87,12 +97,13 @@ class EinfachTableview<T: Codable>: NSObject, UITableViewDelegate, UITableViewDa
     
     // MARK: Local Storage
     
+    // save data to local storage
     func saveDataLocally() {
         switch localStorageMode {
         case .realm:
             if let items = items as? [Object] {
-                let realmStorage = RealmDataStorage<T>()
-                realmStorage.saveDataInRealm(items: items)
+                let realmStorage = RealmDataStorage<RO>()
+                realmStorage.save(items: items)
             } else {
                 einfachTVDelegate?.terminatedWithError(error: .realmSavingFailed,
                                                        description: "Model does not inherit from Object Class")
@@ -100,6 +111,18 @@ class EinfachTableview<T: Codable>: NSObject, UITableViewDelegate, UITableViewDa
         case .none:
             break
             
+        }
+    }
+    
+    // load data from local storage
+    func loadDataFromLocalStorage() {
+        switch localStorageMode {
+        case .realm:
+            let realmStorage = RealmDataStorage<RO>()
+            let array = realmStorage.loadData()
+            self.items = array
+        case .none:
+            break
         }
     }
     

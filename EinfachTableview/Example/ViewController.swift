@@ -13,7 +13,7 @@ class ViewController: UIViewController, EinfachTableviewDelegate {
     
     @IBOutlet weak var myTableview: UITableView!
     // einfach tableview
-    let einfachTV = EinfachTableview<Movies>()
+    let einfachTV = EinfachTableview<Movies, Movie>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
